@@ -1,0 +1,36 @@
+classDiagram
+    Dispositivo o-- Cliente 
+    Medicion o-- Dispositivo
+    Notificacion o-- Dispositivo
+    Falta o-- Dispositivo
+
+    class Cliente 
+    Cliente: +Email
+    Cliente: +Nombre
+    Cliente: +Apellido
+    Cliente: +Contraseña
+    Cliente: +Dispositivos
+    Cliente: +Nacimiento
+
+    class Dispositivo
+    Dispositivo: IdDispositivo 
+    Dispositivo: NumSerie
+    Dispositivo: Modelo
+    Dispositivo: Mediciones
+    Dispositivo: Notificaciones
+    Dispositivo: Faltas
+
+    class Falta
+    Falta: IdDispositivo
+    Falta: Mensaje
+
+    class Medicion 
+    Medicion: IdDispositivo
+    Medicion: Unidad
+    Medicion: Valor
+    Medicion: FechaHora
+
+    class Notificacion
+    Notificacion: IdDispositivo
+    Notificacion: Mensaje
+    Notificacion: FechaHora
