@@ -11,17 +11,17 @@
 
 ## Computación 2023
 
-**Asignatura**: <!-- REEMPLAZA este comentario por el nombre de la asignatura -->
+**Asignatura**: Practicas Profecionalizantes
 
-**Nombre TP**: <!-- REEMPLAZA este comentario por el nombre del TP -->
+**Nombre TP**: REI 
 
-**Apellido y nombre Alumno**: <!-- REEMPLAZA este comentario por tu apellido y nombre -->
+**Apellido y nombre Alumno**: Jose Cruz
 
-**Curso**: <!-- REEMPLAZA este comentario por tu curso -->
+**Curso**: 6to 7ma
 
 # Título del Proyecto
 
-_Acá va un párrafo que describa lo que es el proyecto._
+REI Web Api
 
 ## Comenzando 🚀
 
@@ -53,7 +53,7 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
 
-* **Max Power** - *Desarrollo* - [Maxpower](https://github.com/maxpower)
+* **Jose Cruz** - *Desarrollo* - [Josesinio](https://github.com/Josesinio)
 * **Cosme Fulanito** - *Documentación* - [Cosmefulanito](#Cosmefulanito)
 
 ## Licencia 📄
