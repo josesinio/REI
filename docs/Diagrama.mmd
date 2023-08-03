@@ -4,21 +4,25 @@ classDiagram
     Notificacion o-- Dispositivo
     Falta o-- Dispositivo
 
-    class Cliente 
-    Cliente: +Email
-    Cliente: +Nombre
-    Cliente: +Apellido
-    Cliente: +Contraseña
-    Cliente: +Dispositivos
-    Cliente: +Nacimiento
+    class Cliente {
+    +Email : string
+    +Nombre: string
+    +Apellido: string
+    +Contraseña: string
+    +Dispositivos: Dispositivos 
+    +Nacimiento: date
+    }
+    
 
-    class Dispositivo
-    Dispositivo: IdDispositivo 
-    Dispositivo: NumSerie
-    Dispositivo: Modelo
+    class Dispositivo{
+    IdDispositivo: int   
+    NumSerie: string
+    Modelo: string
     Dispositivo: Mediciones
-    Dispositivo: Notificaciones
-    Dispositivo: Faltas
+    Notificaciones: Notificacion
+    Faltas: Faltas
+    }
+    
 
     class Falta
     Falta: IdDispositivo
