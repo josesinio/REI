@@ -15,26 +15,31 @@ classDiagram
     
 
     class Dispositivo{
-    IdDispositivo: int   
-    NumSerie: string
-    Modelo: string
-    Dispositivo: Mediciones
-    Notificaciones: Notificacion
-    Faltas: Faltas
+    +IdDispositivo: int   
+    +NumSerie: string
+    +Modelo: string
+    +Mediciones: Medicion
+    +Notificaciones: Notificacion
+    +Faltas: Falta
     }
     
 
-    class Falta
-    Falta: IdDispositivo
-    Falta: Mensaje
+    class Falta{
+    +IdDispositivo: int
+    +Mensaje: string
+    }
 
-    class Medicion 
-    Medicion: IdDispositivo
-    Medicion: Unidad
-    Medicion: Valor
-    Medicion: FechaHora
+    class Medicion {
+    +IdDispositivo: int
+    +Unidad: string 
+    +Valor: int
+    +FechaHora: datetime
+   }
+    
 
-    class Notificacion
-    Notificacion: IdDispositivo
-    Notificacion: Mensaje
-    Notificacion: FechaHora
+    class Notificacion{
+    +IdDispositivo: int 
+    +Mensaje: string 
+    +FechaHora: datetime 
+}
+    
