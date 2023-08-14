@@ -1,9 +1,24 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Dominio;
+[Table("Cliente")]
 public class Cliente
 {
+    [Key]
+    [Required]
+    public Guid IdCliente { get; set; }
+    [Required]
+    [StringLength(20)]
     public string Email { get; set; }
+    [Required]
+    [StringLength(20)]
     public string Nombre { get; set; }
+    [Required]
+    [StringLength(20)]
     public string Apellido { get; set; }
+    [Required]
+    [StringLength(20)]
     public string Contrasenia { get; set; }
     public List<Dispositivo> Dispositivos { get; set; }
     public DateOnly Nacimiento { get; set; }
