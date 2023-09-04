@@ -27,16 +27,17 @@ public class NotificacionCotroller : ControllerBase
         return Ok(notificacion);
     }
 
-    [HttpDelete("{string: Mensaje}")]
-    public ActionResult Get(string Mensaje)
+[HttpDelete("{mensaje: string}")]
+    public ActionResult Delete(string mensaje)
     {
-        var notificacionBorrar = contexto.Notificaciones.FirstOrDefault(x => x.Mensaje == Mensaje);
+        var notificacionborrar = contexto.Notificaciones.FirstOrDefault(x => x.Mensaje == mensaje);
 
-        if(notificacionBorrar is null)
-            throw new Exception("No Existe dicha notificacion.")
+        if(notificacionborrar is null)
+            throw new Exception("No Existe dicha notificacion.");
 
-        contexto.Notificaciones.remove(notificacion)
-        return Ok(notificacion);
+        contexto.Notificaciones.Remove(notificacionborrar);
+        contexto.SaveChanges();
+        return Ok();
     }
 
 

@@ -33,4 +33,5 @@ public class Cliente
         Dispositivos = new List<Dispositivo>();
     }
 
+    public void AgregarDispositivos(Dispositivo dispositivo) =>Dispositivos.Add(dispositivo);
 }

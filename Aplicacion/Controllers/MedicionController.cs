@@ -16,15 +16,9 @@ public class MedicionController : ControllerBase
     [HttpGet]
     public ActionResult Get()
     {
-        var mediciones = contexto.Notificaciones;
+        var mediciones = contexto.Medicioness;
         return Ok(mediciones);
     }
 
-    
-    public ActionResult Get()
-    {
-        var mediciones = contexto.Notificaciones;
-        return Ok(mediciones);
-    }
 
 }
