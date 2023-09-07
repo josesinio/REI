@@ -39,10 +39,16 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost("/api/Cliente/{idCliente:Guid}/Dispositivo/{idDispositivo:Guid}")]
-    public ActionResult AsignarUsuario(Guid idDispositivo, Guid idCliente)
+    public ActionResult AgregarDispositivo(Guid idDispositivo, Guid idCliente)
     {
-        var dispositivo = contexto.Dispositivos.FirstOrDefault(a => a.IdDispositivo == idDispositivo);
-        var cliente = contexto.Clientes.FirstOrDefault(a => a.IdCliente == idCliente);
+        var dispositivo = contexto.Dispositivos.FirstOrDefault(d => d.IdDispositivo == idDispositivo);
+        var cliente = contexto.Clientes.FirstOrDefault(c => c.IdCliente == idCliente);
+        if(cliente is null)
+            throw new Exception("No existe un cliente con dicho id");
+
+        if(dispositivo is null)
+            throw new Exception("No existe un dispositivo con ese id");
+            
         cliente.AgregarDispositivos(dispositivo);
         contexto.SaveChanges();
         return Ok("Se asigno dispositivo");

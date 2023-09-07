@@ -1,3 +1,4 @@
+using Aplicacion.Persistencia;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Aplicacion.Controllers;
@@ -16,7 +17,7 @@ public class MedicionController : ControllerBase
     [HttpGet]
     public ActionResult Get()
     {
-        var mediciones = contexto.Medicioness;
+        var mediciones = contexto.Mediciones;
         return Ok(mediciones);
     }
 
