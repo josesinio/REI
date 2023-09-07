@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics.Contracts;
 
 namespace Dominio;
 [Table("Dispositvo")]
@@ -26,4 +27,13 @@ public class Dispositivo
         Notificaciones = new List<Notificacion>();
         Faltas = new List<Falta>();
     }
+
+    public void Modificar (string modelo, int numSerie)
+    { 
+        this.Modelo =modelo;
+        this.NumSerie = numSerie;
+    }
+    
+
+
 }

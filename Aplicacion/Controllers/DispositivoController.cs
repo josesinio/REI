@@ -28,15 +28,6 @@ public class DispositivoController : ControllerBase
         return Ok(dispositivos);
     }
 
-    [HttpPost("/api/Dispositivo/{idDispositivo:Guid}/Usuario/{idUsuario:Guid}")]
-    public ActionResult AsignarUsuario(Guid idAdministrador, Guid idUsuario)
-    {
-        var nuevoAdministrador = contexto.Administradores.FirstOrDefault(a => a.id == idAdministrador);
-        var usuario = contexto.Usuarios.FirstOrDefault(a => a.id == idUsuario);
-        nuevoAdministrador.AsignarUsuario(usuario);
-        contexto.SaveChanges();
-        return Ok("Se asigno usuario");
-    }
 
 
     [HttpPut("{id:Guid}")]
@@ -47,7 +38,7 @@ public class DispositivoController : ControllerBase
         if (DispositivosModificar is null)
             throw new Exception("no existe un administrador  con ese Id.");
 
-        DispositivosModificar.Actualizar(dispositivo.NumSerie, dispositivo.Modelo);
+        DispositivosModificar.Modificar(dispositivo.Modelo, dispositivo.NumSerie);
         contexto.SaveChanges();
         return Ok(DispositivosModificar);
     }

@@ -34,4 +34,14 @@ public class Cliente
     }
 
     public void AgregarDispositivos(Dispositivo dispositivo) =>Dispositivos.Add(dispositivo);
+
+    public void ModificarCliente(string email, string nombre, string apellido, string contrasenia)
+    {
+        this.Email= email;
+        this.Nombre = nombre;
+        this.Apellido = apellido;
+        this.Contrasenia = contrasenia;
+    }
+
+    
 }
