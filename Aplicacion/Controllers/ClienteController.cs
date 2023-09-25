@@ -44,7 +44,7 @@ public class ClienteController : ControllerBase
         var dispositivo = contexto.Dispositivos.FirstOrDefault(d => d.IdDispositivo == idDispositivo);
         var cliente = contexto.Clientes.FirstOrDefault(c => c.IdCliente == idCliente);
         if(cliente is null)
-            throw new Exception("No existe un cliente con dicho id");
+            throw new Exception("No existe un dispositivo con dicho id");
 
         if(dispositivo is null)
             throw new Exception("No existe un dispositivo con ese id");
